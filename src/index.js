@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import notes from '../services/notes/routes/index.js';
+import notesRoutes from './services/notes/routes.js';
  
 const router = Router();
  
