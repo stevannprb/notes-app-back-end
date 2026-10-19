@@ -11,10 +11,10 @@ import { notePayloadSchema, noteQuerySchema } from './schema.js';
 
 const router = express.Router();
 
-router.post('/notes', validate(notePayloadSchema), createNote);
-router.get('/notes', validateQuery(noteQuerySchema), getNotes);
-router.get('/notes/:id', getNoteById);
-router.put('/notes/:id', validate(notePayloadSchema), editNoteById);
-router.delete('/notes/:id', deleteNoteById);
+router.post('/', validate(notePayloadSchema), createNote);
+router.get('/', validateQuery(noteQuerySchema), getNotes);
+router.get('/:id', getNoteById);
+router.put('/:id', validate(notePayloadSchema), editNoteById);
+router.delete('/:id', deleteNoteById);
 
 export default router;
