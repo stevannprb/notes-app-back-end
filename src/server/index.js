@@ -1,13 +1,14 @@
 import express from 'express';
-import routes from './routes/index.js';
-import ErrorHandler from '../middlewares/error.js';
+import routes from '../routes/index.js'; // Gunakan ../routes
 
 const app = express();
 
 app.use(express.json());
 app.use(routes);
 
-// Middleware error-handling wajib di paling bawah
-app.use(ErrorHandler);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 export default app;
